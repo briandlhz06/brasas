@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0b0d" />
+    <title>brasas</title>
+    <meta
+      name="description"
+      content="Compartí un secreto por un link de un solo uso. Se cifra en tu browser."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body data-title-key="titleCreate">
+    <main class="wrap">
+      <header class="top">
+        <h1 class="brand">brasas</h1>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <span class="lang-sep" aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </header>
+
+      <p class="tagline" data-i18n="tagline">
+        Un secreto. Un link. Se quema al leerlo. El cifrado pasa en tu browser;
+        el server nunca ve el texto.
+      </p>
+
+      <form id="create-form">
+        <label for="secret" data-i18n="labelSecret">Secreto</label>
+        <textarea
+          id="secret"
+          name="secret"
+          data-i18n-placeholder="placeholder"
+          placeholder="env vars, passwords, tokens…"
+          autocomplete="off"
+          spellcheck="false"
+          required
+        ></textarea>
+
+        <div class="row ttl-row">
+          <div>
+            <label for="ttl" data-i18n="labelTtl">Vive hasta</label>
+            <select id="ttl" name="ttl">
+              <option value="86400" selected data-i18n-option="ttl24">
+                24 horas
+              </option>
+              <option value="21600" data-i18n-option="ttl6">6 horas</option>
+              <option value="3600" data-i18n-option="ttl1">1 hora</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button type="submit" id="submit-btn" data-i18n="submit">
+              Generar link
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <p id="error" class="error" hidden></p>
+
+      <section id="result" class="result" hidden>
+        <h2 data-i18n="resultTitle">Listo. Mandá este link.</h2>
+        <p class="note result-note" data-i18n="resultNote">
+          Quien lo abra lo lee una sola vez. Después se borra.
+        </p>
+        <div class="link-row">
+          <input id="share-link" type="text" readonly />
+          <button type="button" id="copy-btn" class="ghost" data-i18n="copy">
+            Copiar
+          </button>
+        </div>
+      </section>
+
+      <p class="note" data-i18n="footNote">
+        Self-host o usá el demo. En producción: HTTPS. Similar a OneTimeSecret /
+        Bitwarden Send; zero-knowledge desde el día 1.
+      </p>
+
+      <footer class="foot">
+        <span>MIT · Brian De La Hoz</span>
+        <a href="https://github.com/briandlhz06/brasas" data-i18n="code"
+          >código</a
+        >
+        <a href="https://briandlhz.space">briandlhz.space</a>
+      </footer>
+    </main>
+    <script src="/static/js/i18n.js"></script>
+    <script src="/static/js/crypto.js"></script>
+    <script src="/static/js/create.js"></script>
+  </body>
+</html>

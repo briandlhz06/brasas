@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0a0b0d" />
+    <title>brasas · leer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body data-title-key="titleRead">
+    <main class="wrap">
+      <header class="top">
+        <h1 class="brand">brasas</h1>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-lang="es" aria-pressed="true">ES</button>
+          <span class="lang-sep" aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </header>
+
+      <div id="burn-warn" class="burn" hidden data-i18n="burnWarn">
+        Este secreto se quema al abrirlo. Después de esta vista, ya no existe.
+      </div>
+
+      <p id="loading" class="loading" data-i18n="loading">Descifrando…</p>
+
+      <section id="reveal" class="reveal" hidden>
+        <h2 data-i18n="revealTitle">Tu secreto</h2>
+        <textarea id="plaintext" readonly spellcheck="false"></textarea>
+        <div class="actions reveal-actions">
+          <button type="button" id="copy-plain" data-i18n="copyPlain">
+            Copiar texto
+          </button>
+          <a class="btn ghost" href="/" data-i18n="createAnother">Crear otro</a>
+        </div>
+      </section>
+
+      <section id="gone" class="gone" hidden>
+        <h2 data-i18n="goneTitle">Ya se quemó</h2>
+        <p id="gone-msg"></p>
+        <p class="note">
+          <a href="/" data-i18n="backHome">Volver a brasas</a>
+        </p>
+      </section>
+
+      <p id="error" class="error" hidden></p>
+
+      <footer class="foot">
+        <span>MIT · Brian De La Hoz</span>
+        <a href="/" data-i18n="home">inicio</a>
+      </footer>
+    </main>
+    <script src="/static/js/i18n.js"></script>
+    <script src="/static/js/crypto.js"></script>
+    <script src="/static/js/read.js"></script>
+  </body>
+</html>
