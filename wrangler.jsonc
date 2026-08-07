@@ -1,0 +1,25 @@
+{
+  "name": "brasas",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-08-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "routes": [
+    {
+      "pattern": "brasas.briandlhz.space",
+      "custom_domain": true
+    }
+  ],
+  "assets": {
+    "directory": "./static",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none"
+  },
+  "kv_namespaces": [
+    {
+      "binding": "SECRETS",
+      "id": "8b02d90485f2433fb9f296c07c1e7c69"
+    }
+  ]
+}
